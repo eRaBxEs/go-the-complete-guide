@@ -29,8 +29,9 @@ func main() {
 		fmt.Println("Balance updated! New update:", accountBalance)
 	} else if choice == 3 {
 		fmt.Print("Your Withdrawal Amount:")
-		var wihdrawalAmount float64
-		accountBalance -= wihdrawalAmount
+		var withdrawalAmount float64
+		fmt.Scan(&withdrawalAmount)
+		accountBalance -= withdrawalAmount
 		fmt.Println("Balance updated! New update:", accountBalance)
 	}
 }
