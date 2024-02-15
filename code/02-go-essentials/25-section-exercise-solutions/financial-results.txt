@@ -1,0 +1,3 @@
+earningsBeforeTax:800
+profit:640
+ratioEarningsToProfit:1.25
