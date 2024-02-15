@@ -73,7 +73,7 @@ func getFinancials(revenue, expenses, taxRate float64) (earningsBeforeTax, profi
 
 func writeResultToFile(earningsBeforeTax, profit, ratioEarningsToProfit float64) error {
 	resultText := fmt.Sprint("earningsBeforeTax:", earningsBeforeTax, "\n", "profit:", profit, "\n", "ratioEarningsToProfit:", ratioEarningsToProfit, "\n")
-	err := os.WriteFile("financial-results.txt", []byte(resultText), 0664)
+	err := os.WriteFile("financial-results.txt", []byte(resultText), 0644)
 	if err != nil {
 		fmt.Println("ERROR::", err)
 		return err
