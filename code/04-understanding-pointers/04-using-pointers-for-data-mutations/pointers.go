@@ -5,16 +5,15 @@ import (
 )
 
 func main() {
-	age := 32
+	age := 32 // regular variable
 
-	agePointer := &age // to get the pointer of variable age use & in front of the value variable
+	agePointer := &age
 
-	fmt.Println("Age: ", *agePointer) // Dereferencing: To get the value behind the pointer use * in front of the pointer variable
-
-	getAdultYears(agePointer)
+	fmt.Println("Age: ", *agePointer)
+	editAgeAdultYears(agePointer)
 	fmt.Println("Age after mutation:", age)
 }
 
-func getAdultYears(age *int) {
+func editAgeAdultYears(age *int) {
 	*age = *age - 18
 }
