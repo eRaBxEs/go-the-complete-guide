@@ -22,7 +22,7 @@ func (u *User) ClearUserName() {
 	u.lastName = ""
 }
 
-func NewUser(firstName, lastName, birthdate string) (*User, error) { // In order to avoid a copy to be returned but rather the original value
+func New(firstName, lastName, birthdate string) (*User, error) { // In order to avoid a copy to be returned but rather the original value
 	// using this constructor kind of functions enables us to add validations,
 	// so we can always properly check for expectations at the point of creation
 	if firstName == "" || lastName == "" || birthdate == "" {
