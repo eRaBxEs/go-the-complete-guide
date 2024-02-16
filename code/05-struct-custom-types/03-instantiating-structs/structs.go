@@ -31,8 +31,8 @@ func main() {
 	outputUserDetails(appUser)
 }
 
-func outputUserDetails(userDetails user) {
-	fmt.Println(userDetails)
+func outputUserDetails(u user) {
+	fmt.Println(u)
 }
 
 func getUserData(promptText string) string {
