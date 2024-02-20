@@ -7,17 +7,35 @@ import (
 	"strings"
 
 	"example.com/interface/02-finishing-interface-preparations/note"
+	"example.com/interface/02-finishing-interface-preparations/todo"
 )
 
 func main() {
 
 	title, content := getNoteData()
 
+	todoText := getUserInput("Todo text:")
+
+	todo, err := todo.New(todoText)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
 	userNote, err := note.New(title, content)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+
+	todo.Display()
+	err = todo.Save()
+	if err != nil {
+		fmt.Println("Saving the todo failed!")
+		return
+	}
+
+	fmt.Println("Saving the todo succeeded!")
 
 	userNote.Display()
 	err = userNote.Save()
@@ -31,14 +49,14 @@ func main() {
 }
 
 func getNoteData() (string, string) {
-	title := getuserInput("Note title:")
+	title := getUserInput("Note title:")
 
-	content := getuserInput("Note content:")
+	content := getUserInput("Note content:")
 
 	return title, content
 }
 
-func getuserInput(prompt string) string {
+func getUserInput(prompt string) string {
 	fmt.Printf("%v ", prompt)
 
 	// rather use fmt.Scanln use buffer Reader
