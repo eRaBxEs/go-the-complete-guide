@@ -18,8 +18,7 @@ func (todo Todo) Display() {
 func (todo Todo) Save() error {
 	fileName := "todo.json"
 
-	json, err := json.Marshal(todo)
-
+	json, err := json.MarshalIndent(todo, "", "\t")
 	if err != nil {
 		return err
 	}
@@ -28,10 +27,10 @@ func (todo Todo) Save() error {
 }
 
 func New(content string) (Todo, error) {
+	// add validations
 	if content == "" {
-		return Todo{}, errors.New("Invalid input.")
+		return Todo{}, errors.New("invalid input")
 	}
-
 	return Todo{
 		Text: content,
 	}, nil
