@@ -70,16 +70,23 @@ func main() {
 func printSomething(value interface{}) {
 	switch value.(type) {
 	case int:
-		fmt.Println("Integer:", value)
+		fmt.Println("printSomething(value interface{}) :: Integer:", value)
 	case float64:
-		fmt.Println("Float:", value)
+		fmt.Println("printSomething(value interface{}) :: Float:", value)
 	case string:
-		fmt.Println("String:", value)
+		fmt.Println("printSomething(value interface{}) :: String:", value)
 	}
 }
 
 func printAnything(value any) { // where type any is an alias for interface{}
-	fmt.Println(value)
+	switch value.(type) {
+	case int:
+		fmt.Println("printAnything(value any) :: Integer:", value)
+	case float64:
+		fmt.Println("printAnything(value any) :: Float:", value)
+	case string:
+		fmt.Println("printAnything(value any) :: String:", value)
+	}
 }
 
 func outputData(data outputtable) error {
