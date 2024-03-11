@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"example.com/interface/06-special-any-value-interface/note"
-	"example.com/interface/06-special-any-value-interface/todo"
+	"example.com/interface/08-extracting-type-information/note"
+	"example.com/interface/08-extracting-type-information/todo"
 )
 
 type saver interface { // using a convention in go to name an interface based on the method contract it posseses
