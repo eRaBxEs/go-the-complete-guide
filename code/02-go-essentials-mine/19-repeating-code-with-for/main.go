@@ -55,9 +55,12 @@ func main(){
 
 			accountBalance -= withdrawalAmount
 			fmt.Println("Balance updated! New amount:", accountBalance)
-		}
+			
+		} else {
+		fmt.Println("Goodbye!")
+	}
 		
-		fmt.Println("Your choice:", choice)
+		
 
 
 	}
