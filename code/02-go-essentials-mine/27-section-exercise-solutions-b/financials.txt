@@ -1,0 +1,6 @@
+ebt : 8500.00
+profit : 8032.50
+ratio : 1.06
+ebt : 97500.00
+profit : 92137.50
+ratio : 1.06
