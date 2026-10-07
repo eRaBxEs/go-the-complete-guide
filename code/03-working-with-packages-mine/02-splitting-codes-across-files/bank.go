@@ -9,7 +9,6 @@ import (
 
 const accountBalanceFile = "balance.txt"
 
-// change getBalanceFromFile to  getFloatFromFile to make it more generic
 func getFloatFromFile(fileName string) (float64, error) {
 	data, err := os.ReadFile(fileName)
 
@@ -25,7 +24,6 @@ func getFloatFromFile(fileName string) (float64, error) {
 	return value, nil
 }
 
-// change writeBalanceToFile to writeFloatToFile to make it more generic
 func writeFloatToFile(balance float64, fileName string) {
 	balanceText := fmt.Sprint(balance)
 	os.WriteFile(fileName, []byte(balanceText), 0644)
@@ -43,11 +41,7 @@ func main() {
 	fmt.Println("Welcome to Go Bank!")
 
 	for {
-		fmt.Println("What do you want to do?")
-		fmt.Println("1. Check balance")
-		fmt.Println("2. Deposit money")
-		fmt.Println("3. Withdraw money")
-		fmt.Println("4. Exit")
+		presentOptions()
 
 		var choice int
 		fmt.Print("Your choice: ")
